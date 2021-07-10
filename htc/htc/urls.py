@@ -17,12 +17,20 @@ from django.contrib import admin
 from django.urls import path
 
 from .views import home, about
+from users.views import login, register, logout
 from dashboard.views import dashboard, offer, request_ride, rent
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"),
     path('about/', about, name="about"),
+
+    # Users
+    path('login/', login, name="login"),
+    path('register/', register, name="register"),
+    path('logout/', logout, name="logout"),
+
+    # Dashboard
     path('dashboard/', dashboard, name="dashboard"),
     path('dashboard/offer', offer, name="offer"),
     path('dashboard/request', request_ride, name="request"),

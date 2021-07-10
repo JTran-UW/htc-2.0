@@ -4,4 +4,7 @@
 {% endblock %}
 
 {% block content %}
+    {% for field in form %}
+        {{ field }}
+    {% endfor %}
 {% endblock %}

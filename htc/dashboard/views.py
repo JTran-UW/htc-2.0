@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .forms import OfferForm
+from .models import RideOffer
 
 # Create your views here.
 
@@ -11,9 +12,18 @@ def dashboard(request):
 @login_required
 def offer(request):
     if request.method == "POST":
-        form = OfferForm(request.)
-    else:
-        return render(request, "dashboard/offer.html")
+        request.POST["driver"] = request.user
+        form = OfferForm(request.POST)
+        if form.is_valid():
+            new_offer = RideOffer.objects.create(
+                driver = request.user,
+                date_to_end = request.POST["date_to_end"],
+                description = request.POST["descrition"]
+            )
+            new_offer.save
+    
+    form = OfferForm()
+    return render(request, "dashboard/offer.html", {"form": form})
 
 @login_required
 def rent(request):
