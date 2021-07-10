@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # Our apps
     'users',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,11 @@ TEMPLATES = [
         },
     },
 ]
+
+# Auth settings
+AUTH_USER_MODEL = "users.User"
+LOGIN_URL = "/login"
+LOGIN_REDIRECT_URL = "/login"
 
 WSGI_APPLICATION = 'htc.wsgi.application'
 
