@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import home
+from .views import home, about
+from dashboard.views import dashboard, offer, request_ride, rent
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name="home")
+    path('', home, name="home"),
+    path('about/', about, name="about"),
+    path('dashboard/', dashboard, name="dashboard"),
+    path('dashboard/offer', offer, name="offer"),
+    path('dashboard/request', request_ride, name="request"),
+    path('dashboard/rent', rent, name="rent"),
 ]
