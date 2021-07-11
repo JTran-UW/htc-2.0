@@ -1,0 +1,130 @@
+#header {
+  background-color: #282c34;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(5px + 2vmin);
+  color: white;
+  padding: 0vh 3vw;
+  box-sizing: border-box;
+}
+
+input {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 2px solid #494e58;
+  padding: 3px;
+  margin: 3px;
+  border-radius: 3px;
+  background-color: cadetblue;
+}
+
+#homeWrapper {
+  width: 100%;
+  background-image: url('./truck.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.highlightDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  background-color: #282c34c5;
+  padding: 3em;
+  border-radius: 15px;
+}
+
+.sideLink {
+  font-size: calc(10px + vmin);
+  color: white;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 3vh;
+  width: 100%;
+  margin: 3vh 0vh;
+}
+
+.activeSideLink {
+  font-size: calc(10px + vmin);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 3vh;
+  margin: 3vh 0vh;
+  background-color: #282c34;
+  box-sizing: border-box;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+}
+
+.activeNavLink {
+  color:rgb(105, 181, 182);
+  text-decoration: none;
+  font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+}
+
+.buttonLink {
+  background-color: white;
+  color: #282c34;
+  padding: 1em;
+  text-decoration: none;
+  font-size: calc(10px + 2vmin);
+  font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  margin: 1em 0em 0em;
+  
+}
+
+.buttonLink:hover {
+  background-color: rgba(255, 255, 255, 0.548);
+}
+
+.sidebar {
+  background-color: #494e58;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 81vh;
+  box-sizing: border-box;
+  width: 15vw;
+}
+
+.flexxer {
+  display: flex;
+  flex-direction: row;
+}
+
+.contentWrapper {
+  height: 85vh;
+  width: 85vw;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 1vh 3vw;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
