@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from .views import home, about
 from users.views import *
 from dashboard.views import *
 
@@ -28,20 +27,5 @@ router.register(r"requests", RequestView, "request")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name="home"),
-    path('about/', about, name="about"),
-
-    # Users
-    path('login/', login, name="login"),
-    path('register/', register, name="register"),
-    path('logout/', logout, name="logout"),
-
-    # Dashboard
-    path('dashboard/', dashboard, name="dashboard"),
-    path('dashboard/offer', offer, name="offer"),
-    path('dashboard/request', request_ride, name="request"),
-    path('dashboard/rent', rent, name="rent"),
-
-    # REACT
     path('api/', include(router.urls))
 ]
