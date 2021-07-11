@@ -95,19 +95,21 @@ function Register() {
     if (password != password2) {
       evt.preventDefault();
       alert("Passwords do not match! Please try again.")
+    } else {
+
     }
   }
 
   return (
     <div class="contentWrapper">
     <h2>Register</h2>
-    <form onSubmit={handleSubmit}>
+    <form action="https://htc-hacks.herokuapp.com/api/users/" method="POST">
     <input type="text"
-        name="firstName"
+        name="first"
         placeholder="First Name"
       ></input>
       <input type="text"
-        name="lastName"
+        name="last"
         placeholder="Last Name"
       ></input> <br />
       <input type="text"
@@ -119,20 +121,20 @@ function Register() {
         placeholder="Email"
       ></input> <br />
       <input type="tel"
-        name="phoneNumber"
+        name="phone"
         placeholder="Phone Number"
       ></input> <br />
       <input type="password"
         name="password"
         placeholder="Password"
-        value={password}
-        onChange={(e)=> changePassword(e.target.value)}
+        /*value={password}
+        onChange={(e)=> changePassword(e.target.value)}*/
       ></input> <br />
       <input type="password"
         name="confirmp"
         placeholder="Confirm Password"
-        value={password2}
-        onChange={(e)=> changePassword2(e.target.value)}
+        /*value={password2}
+        onChange={(e)=> changePassword2(e.target.value)}*/
       ></input> <br />
       <input type="submit" value="Submit" class="buttonLink"></input>
     </form>
