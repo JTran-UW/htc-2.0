@@ -3,8 +3,15 @@ from .forms import UserAuthenticationForm, RegistrationForm
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as login_user
 from django.contrib.auth import logout as logout_user
+from rest_framework import viewsets
+from .serializers import UserSerializer
+from .models import User
 
 # Create your views here.
+
+class UserView(viewsets.ModelViewSet):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
 
 def login(request):
     user = request.user
