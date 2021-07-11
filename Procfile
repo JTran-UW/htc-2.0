@@ -1,1 +1,1 @@
-web: gunicorn iby_lab.wsgi --pythonpath=./htc
+web: gunicorn htc.wsgi --pythonpath=./htc
