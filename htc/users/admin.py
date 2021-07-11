@@ -5,8 +5,8 @@ from .models import User
 # Register your models here.
 
 class UserAdmin(UA):
-    list_display = ("email", "first_name", "last_name", "phone_number", "rating", "bio", "date_joined", "last_login", "is_admin", "is_staff")
-    search_fields = ("email", "first_name", "last_name")
+    list_display = ("email", "first", "last", "phone", "rating", "bio", "date_joined", "last_login", "is_admin", "is_staff")
+    search_fields = ("email", "first", "last")
     readonly_fields = ("date_joined", "last_login")
     ordering = ("email", )
 

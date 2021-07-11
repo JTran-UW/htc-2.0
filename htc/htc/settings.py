@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     # Our apps
     'users',
     'dashboard',
+    'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'htc.urls'
@@ -139,3 +142,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Activate Django-Heroku
 django_heroku.settings(locals())
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
