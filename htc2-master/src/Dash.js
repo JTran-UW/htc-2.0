@@ -60,20 +60,20 @@ function Rides(){
         <h4> Price </h4>
         <input type="number"
           name="price"
-        /> <label for="price"> Dollars per mile</label>
+        /> <label for="price"> dollars per mile</label>
   
         <h4> Max Load </h4>
-        <input type="text"
+        <input type="number"
           name="maxLoad"
-        />
+        /> <label for="maxLoad"> lbs</label>
   
         <h4> size </h4>
-        <input type="text"
+        <input type="number"
           name="size"
-          placeholder="Enter location here"
-        /> <label for="size"> cubic ft</label>
+        /> <label for="size"> cubic ft</label> <br></br>
+
+        <input type="submit" value="Submit" class="buttonLink"></input>
       </form>
-      <button /*onClick={onsubmit()}*/>submit</button>
       </div>
       </div>
     )
@@ -122,20 +122,20 @@ function Rides(){
         <h4> Price </h4>
         <input type="number"
           name="price"
-        /> <label for="price"> Dollars per mile</label>
+        /> <label for="price"> dollars per mile</label>
   
         <h4> Max Load </h4>
-        <input type="text"
+        <input type="number"
           name="maxLoad"
-        />
+        /> <label for="maxLoad"> lbs</label>
   
         <h4> size </h4>
-        <input type="text"
+        <input type="number"
           name="size"
-          placeholder="Enter location here"
-        /> <label for="size"> cubic ft</label>
+        /> <label for="size"> cubic ft</label> <br></br>
+
+        <input type="submit" value="Submit" class="buttonLink"></input>
       </form>
-      <button /*onClick={onsubmit()}*/>submit</button>
       </div>
       </div>
     )
