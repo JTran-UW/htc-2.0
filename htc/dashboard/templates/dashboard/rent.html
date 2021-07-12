@@ -1,9 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'dashboard/dashboard.html' %}
 
-{% block styles %}
-{% endblock %}
-
-{% block content %}
+{% block dash %}
     {% for field in form %}
         {{ field }}
     {% endfor %}

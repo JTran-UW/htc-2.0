@@ -8,12 +8,14 @@
 {% block content %}
     <div class="dashboard-content">
         <div class="sidebar">
-            <a href="{%url 'offer'%}" class="sideLink">Give a Ride</a>
-            <a href="{%url 'rent'%}" class="sideLink">Give a Ride</a>
-            <a href="{%url 'request'%}" class="sideLink">Give a Ride</a>
+            <a href="{% url 'offer' %}" class="sideLink">Give a Ride</a>
+            <a href="{% url 'rent' %}" class="sideLink">Give a Ride</a>
+            <a href="{% url 'request' %}" class="sideLink">Give a Ride</a>
         </div>
+        
         <div class="main">
-            <h1>Welcome {{ user.first_name }} {{ user.last_name }}</h1>
+            {% block dash %}
+            {% endblock %}
         </div>
     </div>
 {% endblock %}
