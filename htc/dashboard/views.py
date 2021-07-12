@@ -68,7 +68,7 @@ def request_ride(request):
             )
             new_request.save()
 
-    form = RequestForm(request.POST)
+    form = RequestForm()
     return render(request, "dashboard/makerequest.html", {"form": form})
 
 @login_required

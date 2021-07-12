@@ -8,10 +8,26 @@
 {% block content %}
     <div class="dashboard-content">
         <div class="sidebar">
-            <a href="{% url 'offer' %}" class="sideLink">Make Ride Offer</a>
-            <a href="{% url 'rent' %}" class="sideLink">Find Ride</a>
-            <a href="{% url 'request' %}" class="sideLink">Request Ride</a>
-            <a href="{% url 'contract' %}" class="sideLink">Find Requests</a>
+            <a href="{% url 'offer' %}">
+                <div class="sidespace">
+                    <p class="sidelink">Make Ride Offer</p>
+                </div>
+            </a>
+            <a href="{% url 'rent' %}">
+                <div class="sidespace">
+                    <p class="sidelink">Find Ride</p>
+                </div>
+            </a>
+            <a href="{% url 'request' %}">
+                <div class="sidespace">
+                    <p class="sidelink">Request Ride</p>
+                </div>
+            </a>
+            <a href="{% url 'contract' %}">
+                <div class="sidespace">
+                    <p class="sidelink">Find Requests</p>
+                </div>
+            </a>
         </div>
         
         <div class="main">
