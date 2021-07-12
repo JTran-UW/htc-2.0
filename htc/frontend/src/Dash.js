@@ -5,14 +5,23 @@ import './App.css';
 
 function Rides(){
 
-    var availableRides = [{vehicleType: "car"}]
+    var availableRides = [{vehicleType: "Car/Van", size: 20, location: "12345", dateStart: "July 4", dateEnd: "July 31", price: 6, pricingModel: "per mile"}, {vehicleType: "Truck", size: 20, location: "12345", dateStart: "July 4", dateEnd: "July 31"}, {vehicleType: "Car/Van", size: 20, location: "12345", dateStart: "July 4", dateEnd: "July 31"}]
   
     return (
       <div className="contentWrapper">
         <h2>Get a Ride</h2>
-        {availableRides.map(()=>{
-  
-        })}
+        {availableRides.map((ride)=>(
+          <div className="rideWrapper">
+            <div className="rideInfo">
+              <h3 className="basicHead"><b>{ride.vehicleType}</b>, {ride.size + " cubic ft"}</h3>
+              <p><i>{ride.location}</i></p>
+              <p>Available from {ride.dateStart} to {ride.dateEnd}</p>
+            </div>
+            <div className="">
+            <span className="basicHead"><b>${ride.price}</b></span><p>per hour</p>
+            </div>
+          </div>
+        ))}
       </div>
     )
   }
@@ -23,6 +32,8 @@ function Rides(){
         <h2>Give a Ride</h2>
       <div>
       <form>
+      <input type="hidden" name="userEmail" value={""} />
+      <input type="hidden" name="foo" value="bar" />
       <h4>Vehicle Type </h4>
         <input type="radio" name="vehicleType" id="vehicleType1"/>
         <label for="vehicleType1">Car/Van</label>

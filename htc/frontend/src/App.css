@@ -21,6 +21,16 @@ input {
   background-color: rgba(105, 181, 182, 0.301);
 }
 
+.basicHead {
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  font-size: 30px;
+}
+
+.rideInfo {
+  margin: 1vw;
+}
+
 input[type=text] {
   width: 100%;
 }
@@ -64,17 +74,18 @@ form {
   font-size: calc(10px + vmin);
   color: white;
   text-decoration: none;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Arial", sans-serif;
   padding: 3vh;
   width: 100%;
   margin: 3vh 0vh;
+  font-weight: bold;
 }
 
 .activeSideLink {
   font-size: calc(10px + vmin);
   color: rgb(255, 255, 255);
   text-decoration: none;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Arial", sans-serif;
   padding: 3vh;
   margin: 3vh 0vh;
   background-color: #282c34;
@@ -84,13 +95,13 @@ form {
 .navLink {
   color: white;
   text-decoration: none;
-  font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .activeNavLink {
   color:#bcebd4;
   text-decoration: none;
-  font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .buttonLink {
@@ -99,7 +110,7 @@ form {
   padding: 1em;
   text-decoration: none;
   font-size: calc(10px + 2vmin);
-  font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 1em 1px 1px;
   
 }
@@ -117,6 +128,16 @@ form {
   height: 85vh;
   box-sizing: border-box;
   width: 15vw;
+}
+
+.rideWrapper {
+  background-color: #ce94e6;
+  width: 79vw;
+  margin: 2vw 0vw;
+  padding: 2vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
 }
 
 .flexxer {
