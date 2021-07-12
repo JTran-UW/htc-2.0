@@ -2,6 +2,12 @@
 
 {% block dash %}
     {% for request in requests %}
-        {{ request }}
+        <div class="offers">
+            <h2 class="field">{{ request.vehicle_type }} - {{ request.size }}</h2>
+            <h3 class="field">{{ request.location }}</h3>
+            <h3 class="field">{{ request.begin_date }} - {{ request.end_date }}</h3>
+            <h1 class="field">{{ request.price }} {{ request.pricing_model }}</h1>
+            <input type="submit" value="Reserve">
+        </div>
     {% endfor %}
 {% endblock %}

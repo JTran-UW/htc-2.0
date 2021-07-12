@@ -5,6 +5,8 @@
     <head>
         <link rel="stylesheet" href="{% static 'style.css' %}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+        <link rel="icon" href="{% static 'logo.png' %}">
+        <title>Delivr</title>
         {% block styles %}
         {% endblock %}
     </head>
@@ -12,7 +14,7 @@
         <!--Header-->
         <div id="header">
             <a href="{% url 'home' %}">
-                <h1 class="logo">Delivr</h1>
+                <img src="{% static 'logo.png' %}" style="height: 70px; margin: 5px 10px;">
             </a>
 
             <div class="link-bar">

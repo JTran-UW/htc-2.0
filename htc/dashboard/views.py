@@ -70,7 +70,7 @@ def request_ride(request):
                 price = request.POST["price"],
                 max_load = request.POST["max_load"],
                 size = request.POST["size"],
-                description = request.POST["descrition"]
+                description = request.POST["description"]
             )
             new_request.save()
 

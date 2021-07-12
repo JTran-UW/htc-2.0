@@ -4,7 +4,8 @@
 {% endblock %}
 
 {% block content %}
-    <form method="POST">
+    <form method="POST" style="margin: 50px auto;">
+        <h1>Register</h1>
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit">

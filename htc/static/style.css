@@ -35,6 +35,18 @@ footer {
     color: white;
 }
 
+.offers {
+    padding: 10px 20px;
+    width: 1078px;  
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #C4C4C4;
+}
+
+.field {
+    padding: 5px;
+}
+
 .logo {
     font-size: 35px;
     margin: 15px 40px;
