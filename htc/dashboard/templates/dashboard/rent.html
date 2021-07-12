@@ -3,7 +3,12 @@
 {% block dash %}
     {% for offer in offers %}
         <a href="/dashboard/rent/{{ offer.pk }}">
-            {{ offer }}
+            <div class="offers">
+                <h2 class="field">{{ offer.vehicle_type }} - {{ offer.size }}</h2>
+                <h3 class="field">{{ offer.location }}</h3>
+                <h3 class="field">{{ offer.begin_date }} - {{ offer.end_date }}</h3>
+                <h1 class="field">{{ offer.price }} {{ offer.pricing_model }}</h1>
+            </div>
         </a>
     {% endfor %}
 {% endblock %}
