@@ -7,7 +7,13 @@ from .models import RideOffer, RideRequest
 
 @login_required
 def dashboard(request):
-    return render(request, "dashboard/profile.html")
+    offers = RideOffer.objects.all()
+    requests = RideRequest.objects.all()
+
+    your_offers = [o for o in offers if o.driver == request.user]
+    your_requests = [r for r in requests if r.business == request.user]
+
+    return render(request, "dashboard/profile.html", {"offers": your_offers, "requests": your_requests})
 
 @login_required
 def offer(request):
