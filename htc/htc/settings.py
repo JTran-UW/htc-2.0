@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'dashboard',
     'corsheaders',
     'rest_framework',
+    'knox',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +147,9 @@ django_heroku.settings(locals())
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'knox.auth.TokenAuthentication',
+    ]
+}
