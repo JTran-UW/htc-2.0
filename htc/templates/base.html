@@ -1,7 +1,39 @@
 {% load static %}
 
-{% block styles %}
-{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        {% block styles %}
+        {% endblock %}
+    </head>
+    <body>
+        <!--Header-->
+        <div id="header">
+            <a href="{% url 'home' %}">
+                <h1 class="logo">Delivr</h1>
+            </a>
 
-{% block content %}
-{% endblock %}
+            <div class="link-bar">
+                <a href="{% url 'home' %}" class="link">Home</a>
+                <a href="{% url 'about' %}" class="link">About</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'dashboard' %}" class="link">Dashboard</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="link">Login</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <!--Content-->
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <!--Footer-->
+        <div class="footer">
+
+        </div>
+    </body>
+</html>
