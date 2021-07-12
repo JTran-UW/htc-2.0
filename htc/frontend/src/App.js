@@ -50,10 +50,10 @@ function Login() {
   return (
     <div class="contentWrapper">
     <h2>Login</h2>
-    <form>
+    <form action="https://htc-hacks.herokuapp.com/api/login/" method="POST" >
       <input type="text"
-        name="username"
-        placeholder="username"
+        name="email"
+        placeholder="email"
       ></input> <br />
       <input type="password"
         name="password"
@@ -103,7 +103,7 @@ function Register() {
   return (
     <div class="contentWrapper">
     <h2>Register</h2>
-    <form action="https://htc-hacks.herokuapp.com/api/users/" method="POST">
+    <form action="https://htc-hacks.herokuapp.com/api/register/" method="POST">
     <input type="text"
         name="first"
         placeholder="First Name"
@@ -167,7 +167,7 @@ function App() {
     <Route exact path="/">
         <Home />
       </Route>
-      <PrivateRoute path="/dash">
+      <PrivateRoute path="/dash"> {/*SWITCH BACK TO PrivateRoute BEFORE COMMIT! PLEASE REMEMBER*/} 
         <Dashboard />
       </PrivateRoute>
       <Route path="/about">
