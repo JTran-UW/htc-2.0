@@ -1,7 +1,5 @@
-{% extends 'dashboard/dashboard.html' %}
+{% extends "dashboard/dashboard.html" %}
 
 {% block dash %}
-    {% for request in requests %}
-        {{ request }}
-    {% endfor %}
+    {{ contract }}
 {% endblock %}

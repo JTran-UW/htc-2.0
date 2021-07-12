@@ -2,6 +2,8 @@
 
 {% block dash %}
     {% for offer in offers %}
-        {{ offers }}
+        <a href="/dashboard/rent/{{ offer.pk }}">
+            {{ offer }}
+        </a>
     {% endfor %}
 {% endblock %}

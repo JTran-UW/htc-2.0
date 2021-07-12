@@ -15,12 +15,12 @@
             </a>
 
             <div class="link-bar">
-                <a href="{% url 'home' %}" class="link">Home</a>
                 <a href="{% url 'about' %}" class="link">About</a>
                 {% if user.is_authenticated %}
                     <a href="{% url 'dashboard' %}" class="link">Dashboard</a>
                 {% else %}
                     <a href="{% url 'login' %}" class="link">Login</a>
+                    <a href="{% url 'register' %}" class="link button">Register</a>
                 {% endif %}
             </div>
         </div>

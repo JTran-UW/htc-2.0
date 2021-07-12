@@ -29,6 +29,9 @@ class RideOffer(models.Model):
     size = models.CharField(max_length=10)
     description = models.TextField()
 
+    # Meta
+    reserved = models.BooleanField(default=False)
+
 class RideRequest(models.Model):
     """
     Request for a ride
@@ -46,4 +49,7 @@ class RideRequest(models.Model):
     max_load = models.CharField(max_length=10)
     size = models.CharField(max_length=10)
     description = models.TextField()
+
+    # Meta
+    reserved = models.BooleanField(default=False)
     

@@ -1,0 +1,7 @@
+{% extends 'dashboard/dashboard.html' %}
+
+{% block dash %}
+    {% for request in requests %}
+        {{ request }}
+    {% endfor %}
+{% endblock %}
