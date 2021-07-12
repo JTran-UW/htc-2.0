@@ -3,7 +3,6 @@ from users.models import User
 
 # Create your models here.
 
-
 class Vehicle(models.TextChoices):
     CAR = "Car/Van"
     TRUCK = "Truck"
@@ -47,3 +46,4 @@ class RideRequest(models.Model):
     max_load = models.CharField(max_length=10)
     size = models.CharField(max_length=10)
     description = models.TextField()
+    

@@ -14,22 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from rest_framework import routers
+from django.urls import path
 
-from users.views import *
-from dashboard.views import *
-from knox import views as knox_views
-
-router = routers.DefaultRouter()
-router.register(r"users", UserView, "user")
-router.register(r"offers", OfferView, "offer")
-router.register(r"requests", RequestView, "request")
+from .views import home, about
+from users.views import login, register, logout
+from dashboard.views import dashboard, offer, request_ride, rent
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    path('api/register/', RegisterAPI.as_view(), name='register'),
-    path('api/login/', LoginAPI.as_view(), name="login"),
-    path('api/logout/', knox_views.LogoutView.as_view(), name='logout'),
+    path('', home, name="home"),
+    path('about/', about, name="about"),
+
+    # Users
+    path('login/', login, name="login"),
+    path('register/', register, name="register"),
+    path('logout/', logout, name="logout"),
+
+    # Dashboard
+    path('dashboard/', dashboard, name="dashboard"),
+    path('dashboard/offer', offer, name="offer"),
+    path('dashboard/request', request_ride, name="request"),
+    path('dashboard/rent', rent, name="rent"),
 ]

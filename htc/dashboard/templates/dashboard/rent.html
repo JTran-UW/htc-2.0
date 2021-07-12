@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+{% endblock %}
+
+{% block content %}
+    {% for field in form %}
+        {{ field }}
+    {% endfor %}
+{% endblock %}

@@ -1,39 +1,48 @@
-from rest_framework import viewsets, generics, permissions
-from rest_framework.response import Response
-from knox.models import AuthToken
-from .serializers import UserSerializer, RegisterSerializer
-from .models import User
-
-from django.contrib.auth import login
-from rest_framework.authtoken.serializers import AuthTokenSerializer
-from knox.views import LoginView as KnoxLoginView
+from django.shortcuts import render, redirect
+from .forms import UserAuthenticationForm, RegistrationForm
+from django.contrib.auth import authenticate
+from django.contrib.auth import login as login_user
+from django.contrib.auth import logout as logout_user
 
 # Create your views here.
 
-class UserView(viewsets.ModelViewSet):
-    serializer_class = UserSerializer
-    queryset = User.objects.all()
+def login(request):
+    user = request.user
+    if user.is_authenticated:
+        return redirect("dashboard")
+    
+    if request.POST:
+        form = UserAuthenticationForm(request.POST)
+        if form.is_valid():
+            email = request.POST["email"]
+            password = request.POST["password"]
+            user = authenticate(email=email, password=password)
 
-# Register API
-class RegisterAPI(generics.GenericAPIView):
-    serializer_class = RegisterSerializer
+            if user:
+                login_user(request, user)
+                return redirect("dashboard")
+    else:
+        form = UserAuthenticationForm()
+    
+    return render(request, "users/login.html", {"form": form})
 
-    def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.save()
-        return Response({
-            "user": UserSerializer(user, context=self.get_serializer_context()).data,
-            "token": AuthToken.objects.create(user)[1]
-        })
+def register(request):
+    if request.method == "POST":
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            
+            email = request.POST["email"]
+            password = request.POST["password1"]
+            user = authenticate(email=email, password=password)
+            
+            if user:
+                login_user(request, user)
+                return redirect("dashboard")
+    else:
+        form = RegistrationForm()
+    return render(request, "users/register.html", {"form": form})
 
-class LoginAPI(KnoxLoginView):
-    permission_classes = (permissions.AllowAny,)
-
-    def post(self, request, format=None):
-        serializer = AuthTokenSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['user']
-        login(request, user)
-        return super(LoginAPI, self).post(request, format=None)
-        
+def logout(request):
+    logout_user(request)
+    return redirect("login")
