@@ -30,3 +30,27 @@
 .main {
     padding: 20px 40px;
 }
+
+.profile-stuff {
+    background-color: #494e58;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    margin: 20px 0px;
+    width: 500px;
+}
+
+.profile-content {
+    padding: 20px;
+    background-color: #404857;
+    border-left: 2px solid rgba(255, 164, 164, 0.76);
+}
+
+.profile-content * {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+span * {
+    display: inline-block;
+}

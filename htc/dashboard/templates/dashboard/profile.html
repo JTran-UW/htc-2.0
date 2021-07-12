@@ -2,4 +2,25 @@
 
 {% block dash %}
     <h1>Welcome {{ user.first_name }} {{ user.last_name }}</h1>
+
+    <div class="profile-stuff">
+        <h1>Current Offers</h1>
+        {% for offer in offers %}
+            <div class="profile-content">
+                <span><h2>{{ offer.vehicle_type }}</h2><h3>&nbsp - {{ offer.size }}</h3></span>
+                <p>{{ offer.location }}</p>
+                <span><h2>{{ offer.price }}</h2><h3>&nbspPer {{ offer.pricing_model }}</h3></span>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="profile-stuff">
+        <h1>Current Requests</h1>
+        {% for request in requests %}
+            <div class="profile-content">
+                <span><h2>{{ offer.vehicle_type }}</h2><h3>&nbsp - {{ offer.size }}</h3></span>
+                <p>{{ offer.location }}</p>
+                <span><h2>{{ offer.price }}</h2><h3>&nbspPer {{ offer.pricing_model }}</h3></span>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
