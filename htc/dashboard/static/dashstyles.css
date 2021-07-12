@@ -1,5 +1,4 @@
 .sidebar {
-    width: 300px;
     height: calc(100vh - 70px);
     background-color: #494e58;
     margin: 0px;
@@ -8,6 +7,25 @@
     flex-direction: column;
 }
 
+.sidespace {
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.sidespace:hover {
+    background-color: #404857;
+    transition: 0.3s;
+}
+
+.sidelink {
+    font-size: 18px;
+    color: white;
+}
+
 .dashboard-content {
     display: flex;
+}
+
+.main {
+    padding: 20px 40px;
 }
