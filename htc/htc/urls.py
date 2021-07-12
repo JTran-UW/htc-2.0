@@ -19,6 +19,7 @@ from rest_framework import routers
 
 from users.views import *
 from dashboard.views import *
+from knox import views as knox_views
 
 router = routers.DefaultRouter()
 router.register(r"users", UserView, "user")
@@ -27,5 +28,8 @@ router.register(r"requests", RequestView, "request")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('api/register/', RegisterAPI.as_view(), name='register'),
+    path('api/login/', LoginAPI.as_view(), name="login"),
+    path('api/logout/', knox_views.LogoutView.as_view(), name='logout'),
 ]
