@@ -1,0 +1,10 @@
+.sidebar {
+    width: 300px;
+    height: calc(100vh - 70px);
+    background-color: #494e58;
+    margin: 0px;
+}
+
+.dashboard-content {
+    display: flex;
+}

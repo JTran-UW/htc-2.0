@@ -151,17 +151,6 @@ form {
     background-color: #cd94e683;
 }
 
-.sidebar {
-    background-color: #494e58;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    height: 85vh;
-    box-sizing: border-box;
-    width: 15vw;
-}
-
 .rideWrapper {
     background-color: #ce94e6;
     width: 79vw;
