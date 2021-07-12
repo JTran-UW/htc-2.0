@@ -33,7 +33,8 @@ def offer(request):
 
 @login_required
 def rent(request):
-    return render(request, "dashboard/rent.html")
+    offers = RideOffer.objects.all()
+    return render(request, "dashboard/rent.html", {"offers": offers})
 
 @login_required
 def request_ride(request):
@@ -54,3 +55,8 @@ def request_ride(request):
             )
 
     return render(request, "dashboard/request.html")
+
+@login_required
+def contract(request):
+    requests = RideRequest.objects.all()
+    return render(request, "dashboard/contract.html", {"requests": requests})

@@ -3,6 +3,9 @@
     height: calc(100vh - 70px);
     background-color: #494e58;
     margin: 0px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .dashboard-content {

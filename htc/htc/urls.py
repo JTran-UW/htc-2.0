@@ -18,7 +18,7 @@ from django.urls import path
 
 from .views import home, about
 from users.views import login, register, logout
-from dashboard.views import dashboard, offer, request_ride, rent
+from dashboard.views import dashboard, offer, request_ride, rent, contract
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,4 +35,5 @@ urlpatterns = [
     path('dashboard/offer', offer, name="offer"),
     path('dashboard/request', request_ride, name="request"),
     path('dashboard/rent', rent, name="rent"),
+    path('dashboard/contract', contract, name="contract")
 ]
